@@ -43,7 +43,7 @@ public class GraphicsProj1 extends JPanel {
     static double scaleX = 1.0;
     static double scaleY = 1.0;
     ImageTemplate myImages = new ImageTemplate();
-    BufferedImage tImage = myImages.getImage(ImageTemplate.letterT);
+    BufferedImage tImage = myImages.getImage(ImageTemplate.stripes);
     BufferedImage pacmanImage = myImages.getImage(ImageTemplate.pacman);
     BufferedImage xImage = myImages.getImage(ImageTemplate.letterX);
 
