@@ -44,6 +44,8 @@ public class GraphicsProj1 extends JPanel {
     static double scaleY = 1.0;
     ImageTemplate myImages = new ImageTemplate();
     BufferedImage tImage = myImages.getImage(ImageTemplate.letterT);
+    BufferedImage pacmanImage = myImages.getImage(ImageTemplate.pacman);
+    BufferedImage xImage = myImages.getImage(ImageTemplate.letterX);
 
     /**
      * @param args the command line arguments
@@ -102,7 +104,7 @@ public class GraphicsProj1 extends JPanel {
 
         /* Fill in the entire drawing area with white.
          */
-        g2.setPaint(Color.WHITE);
+        g2.setPaint(Color.BLACK);
         g2.fillRect(0, 0, getWidth(), getHeight()); // From the old graphics API!
 
         /* Here, I set up a new coordinate system on the drawing area, by calling
@@ -127,10 +129,15 @@ public class GraphicsProj1 extends JPanel {
             case 2: // Second frame translates each image by (-9, 5).
                 translateX = -9;
                 translateY = 5;
+                scaleX = 1.0;
+                scaleY = 1.0;
+                rotation = 0;
                 break;
             case 3: // Third frame rotates each image by 60 degrees Counter
                 translateX = -9;
                 translateY = 5;
+                scaleX = 1.0;
+                scaleY = 1.0;
                 rotation = 60*Math.PI / 180.0;
                 break;
             // Can add more cases as needed
