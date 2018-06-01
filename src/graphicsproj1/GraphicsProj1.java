@@ -146,14 +146,14 @@ public class GraphicsProj1 extends JPanel {
                 translateY = 7;
                 scaleX = 1.0;
                 scaleY = 1.0;
-                rotation = 90*Math.PI;
+                rotation = 45*Math.PI/2;
                 break;
             case 5: // Second frame translates each image by (-9, 5).
                 translateX = -5;
                 translateY = 7;
                 scaleX = 2.0;
                 scaleY = .5;
-                rotation = 90*Math.PI;
+                rotation = 45*Math.PI;
                 break;
             case 6: // Second frame translates each image by (-9, 5).
                 translateX = -9;
@@ -168,19 +168,27 @@ public class GraphicsProj1 extends JPanel {
         g2.translate(-10,10);
         g2.rotate(rotation); // Rotate image.
         g2.scale(scaleX, scaleY); // Scale image.
-        g2.drawImage(tImage, 0, 0, this); // Draw image.
+        g2.drawImage(tImage, 0, 0, this); // Draw image
         g2.setTransform(savedTransform);
 
         // Add another T image
         g2.translate(translateX, translateY); // Move image.
         // To offset translate again
         // This allows you to place your images across your graphic
-        g2.translate(-30,30);
+        g2.translate(-30,-30);
         g2.rotate(rotation); // Rotate image.
         g2.scale(scaleX, scaleY); // Scale image.
-        g2.drawImage(tImage, 0, 0, this); // Draw image.
+        g2.drawImage(pacmanImage, 0, 0, this); // Draw image.
         g2.setTransform(savedTransform);
 
+        g2.translate(translateX, translateY); // Move image.
+        // To offset translate again
+        // This allows you to place your images across your graphic
+        g2.translate(-60,30);
+        g2.rotate(rotation); // Rotate image.
+        g2.scale(scaleX, scaleY); // Scale image.
+        g2.drawImage(xImage, 0, 0, this); // Draw image.
+        g2.setTransform(savedTransform);
 // You can add more shapes/images as needed
 //
 
