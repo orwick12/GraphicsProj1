@@ -69,7 +69,7 @@ public class GraphicsProj1 extends JPanel {
         // Modified to change timing and allow for recycling
         animationTimer = new Timer(1600, new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                if (panel.frameNumber > 3) {
+                if (panel.frameNumber > 6) {
                     panel.frameNumber = 0;
                 } else {
                     panel.frameNumber++;
@@ -126,22 +126,41 @@ public class GraphicsProj1 extends JPanel {
                 scaleY = 1.0;
                 rotation = 0;
                 break;
-            case 2: // Second frame translates each image by (-9, 5).
+            case 2: // Second frame translates each image by (-5, 7).
+                translateX = -5;
+                translateY = 7;
+                scaleX = 1.0;
+                scaleY = 1.0;
+                rotation = 0;
+                break;
+            case 3: // Third frame rotates each image by 45 degrees Counter
+                translateX = -5;
+                translateY = 7;
+                scaleX = 1.0;
+                scaleY = 1.0;
+                rotation = 45*Math.PI / 180.0;
+                break;
+            // Can add more cases as needed
+            case 4: // Second frame translates each image by (-9, 5).
+                translateX = -5;
+                translateY = 7;
+                scaleX = 1.0;
+                scaleY = 1.0;
+                rotation = 90*Math.PI;
+                break;
+            case 5: // Second frame translates each image by (-9, 5).
+                translateX = -5;
+                translateY = 7;
+                scaleX = 2.0;
+                scaleY = .5;
+                rotation = 90*Math.PI;
+                break;
+            case 6: // Second frame translates each image by (-9, 5).
                 translateX = -9;
                 translateY = 5;
                 scaleX = 1.0;
                 scaleY = 1.0;
                 rotation = 0;
-                break;
-            case 3: // Third frame rotates each image by 60 degrees Counter
-                translateX = -9;
-                translateY = 5;
-                scaleX = 1.0;
-                scaleY = 1.0;
-                rotation = 60*Math.PI / 180.0;
-                break;
-            // Can add more cases as needed
-            default:
                 break;
         } // End switch
         g2.translate(translateX, translateY); // Move image.
