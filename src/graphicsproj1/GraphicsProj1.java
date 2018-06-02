@@ -44,7 +44,7 @@ public class GraphicsProj1 extends JPanel {
     static double scaleY = 1.0;
     ImageTemplate myImages = new ImageTemplate();
     BufferedImage tImage = myImages.getImage(ImageTemplate.stripes);
-    BufferedImage pacmanImage = myImages.getImage(ImageTemplate.pacman);
+    BufferedImage arrowImage = myImages.getImage(ImageTemplate.arrow);
     BufferedImage xImage = myImages.getImage(ImageTemplate.letterX);
 
     /**
@@ -69,7 +69,7 @@ public class GraphicsProj1 extends JPanel {
         // Modified to change timing and allow for recycling
         animationTimer = new Timer(1600, new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                if (panel.frameNumber > 6) {
+                if (panel.frameNumber > 5) {
                     panel.frameNumber = 0;
                 } else {
                     panel.frameNumber++;
@@ -141,26 +141,26 @@ public class GraphicsProj1 extends JPanel {
                 rotation = 45*Math.PI / 180.0;
                 break;
             // Can add more cases as needed
-            case 4: // Second frame translates each image by (-9, 5).
+            case 4: // Fourth frame rotates each image by 90 degrees
                 translateX = -5;
                 translateY = 7;
                 scaleX = 1.0;
                 scaleY = 1.0;
-                rotation = 45*Math.PI/2;
+                rotation = 315*Math.PI / 180;
                 break;
-            case 5: // Second frame translates each image by (-9, 5).
+            case 5: // Fifth frame scales 2 times in the x component
+                translateX = -5;
+                translateY = 7;
+                scaleX = 2.0;
+                scaleY = 1.0;
+                rotation = 315*Math.PI / 180;
+                break;
+            case 6: // 6th frame scales .5 times in the y component
                 translateX = -5;
                 translateY = 7;
                 scaleX = 2.0;
                 scaleY = .5;
-                rotation = 45*Math.PI;
-                break;
-            case 6: // Second frame translates each image by (-9, 5).
-                translateX = -9;
-                translateY = 5;
-                scaleX = 1.0;
-                scaleY = 1.0;
-                rotation = 0;
+                rotation = 315*Math.PI / 180;
                 break;
         } // End switch
         g2.translate(translateX, translateY); // Move image.
@@ -178,7 +178,7 @@ public class GraphicsProj1 extends JPanel {
         g2.translate(-30,-30);
         g2.rotate(rotation); // Rotate image.
         g2.scale(scaleX, scaleY); // Scale image.
-        g2.drawImage(pacmanImage, 0, 0, this); // Draw image.
+        g2.drawImage(arrowImage, 0, 0, this); // Draw image.
         g2.setTransform(savedTransform);
 
         g2.translate(translateX, translateY); // Move image.
